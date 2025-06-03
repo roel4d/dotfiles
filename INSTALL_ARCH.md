@@ -171,6 +171,12 @@ git config --global init.defaultBranch main
 ## Chrome
 `sudo pacman -Suy chromium`
 
+## Bitwarden
+```
+pacman -Suy bitwarden
+echo '-ozone-platform=wayland' > ~/.config/electron-flags.conf
+```
+
 ## Dropbox
 ```
 pacman -Syu base-devel python-pgpme libappindicator-gtk3
