@@ -122,6 +122,12 @@ visudo
 ## Sound
 `sudo pacman -Suy pipewire pipewire-audio pipewire-jack sof-firmware pipewire-pulse`
 
+## Bluetooth
+```
+sudo pacman -Suy bluez bluez-utils
+sudo systemctl --now enable bluetooth.service
+```
+
 ## Sway (OLD)
 ```
 sudo pacman -Su sway swaylock swayidle swaybg waybar foot fuzzel wmenu brightnessctl
@@ -129,7 +135,7 @@ sudo pacman -Su sway swaylock swayidle swaybg waybar foot fuzzel wmenu brightnes
 
 ## Gnome
 ```
-sudo pacman -Suy gnome gnome-extra
+sudo pacman -Suy gnome gnome-extra extra/xorg-xwayland
 sudo systemctl enable gdm.service
 ```
 
