@@ -135,7 +135,7 @@ sudo pacman -Su sway swaylock swayidle swaybg waybar foot fuzzel wmenu brightnes
 
 ## Gnome
 ```
-sudo pacman -Suy gnome gnome-extra extra/xorg-xwayland
+sudo pacman -Suy gnome gnome-extra extra/xorg-xwayland seahorse
 sudo systemctl enable gdm.service
 ```
 
@@ -162,6 +162,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 :PlugInstall
+
+## Neovim
+```
+sudo pacman -S neovim wl-clipboard
+stow kickstart-nvim
+```
 
 ## Generate SSH Key
 `ssh-keygen -t ed25519 -C "your_email@example.com"`
@@ -212,6 +218,24 @@ Change settings with F9 -> options
 Appearance: modarin256
 Panel Options: Use SI size units + Lynx-like motion
 
+## Remap caps lock to dollar
+`sudo vi /usr/share/X11/xkb/symbols/us`
+Add the CAPS line:
+```
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "English (US)";
+
+    key <CAPS>  {[ dollar ]};
+    ...
+
+```
+
+## Misc
+sudo pacman -Suy fd ripgrep fzf
+
+
 ## TMUX (OLD)
 ```
 sudo pacman -Suy tmux
@@ -219,6 +243,3 @@ stow tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 Start tmux and install plugins with `ctrl-b I`
-
-## Misc
-sudo pacman -Suy fd ripgrep fzf
