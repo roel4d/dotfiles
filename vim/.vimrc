@@ -108,11 +108,9 @@ let NERDTreeQuitOnOpen = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \   'python': ['ruff', 'ruff_format'],
 \   'php': ['php_cs_fixer'],
-\   'rust': ['rustfmt'],
 \}
 nnoremap <silent> gd <Plug>(ale_go_to_definition)
 nnoremap <silent> gr <Plug>(ale_find_references)

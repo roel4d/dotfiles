@@ -16,19 +16,19 @@ https://wiki.archlinux.org/title/Iwd#iwctl
 
 `fdisk /dev/nvme0n1`
 
-1. EFI (don't remove or format)
-2. +4Gb swap
-3. +90G root
-4. home dir
+1. EFI (don't remove or format) 
+2. +4Gb swap  
+3. +90G root  
+4. home dir  
 
-Format:
+Format:  
 ```
 mkfs.ext4 /dev/nvme0n1p3
 mkfs.ext4 /dev/nvme0n1p4  (dont't if you need to keep the data)
 mkswap /dev/nvme0n1p2
 ```
 
-Mount:
+Mount:  
 ```
 mount /dev/nvme0n1p3 /mnt
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
@@ -53,31 +53,31 @@ arch-chroot /mnt
 
 ## Time
 ```
-ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime
-hwclock --systohc
+ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime  
+hwclock --systohc  
 ```
 
 ## Localization
-Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8 and nl_BE.UTF-8 UTF-8
+Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8 and nl_BE.UTF-8 UTF-8  
 `locale-gen`
 
-Create the locale.conf(5) file, and set the LANG variable accordingly:
-/etc/locale.conf
-LANG=en_US.UTF-8
+Create the locale.conf(5) file, and set the LANG variable accordingly:  
+/etc/locale.conf  
+LANG=en_US.UTF-8  
 
 ## Network
-set hostname in /etc/hostname
-`pacman -Suy networkmanager`
-`systemctl enable NetworkManager.service`
+set hostname in /etc/hostname  
+`pacman -Suy networkmanager`  
+`systemctl enable NetworkManager.service`  
 
 ## Root passwd
-`passwd`
+`passwd`  
 
 ## Grub
 `pacman -S grub efibootmgr`
 
 remove old boot entries from EFI:
-`efibootmgr --delete-bootnum --bootnum XXXX --unicode`
+`efibootmgr --delete-bootnum --bootnum XXXX --unicode`  
 
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch
@@ -213,14 +213,14 @@ sudo systemctl --now enable sshd
 ```
 
 ## Midnight Commander
-`sudo pacman -Suy mc`
-Change settings with F9 -> options
-Appearance: modarin256
-Panel Options: Use SI size units + Lynx-like motion
+`sudo pacman -Suy mc`  
+Change settings with F9 -> options  
+Appearance: modarin256  
+Panel Options: Use SI size units + Lynx-like motion  
 
 ## Remap caps lock to dollar
-`sudo vi /usr/share/X11/xkb/symbols/us`
-Add the CAPS line:
+`sudo vi /usr/share/X11/xkb/symbols/us`  
+Add the CAPS line:  
 ```
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
@@ -242,4 +242,4 @@ sudo pacman -Suy tmux
 stow tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-Start tmux and install plugins with `ctrl-b I`
+Start tmux and install plugins with `ctrl-b I`  

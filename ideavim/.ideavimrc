@@ -1,0 +1,49 @@
+sethandler <C-O> a:vim
+sethandler <C-S> a:vim
+sethandler <C-V> a:vim
+sethandler <C-W> a:vim
+
+
+let mapleader = " "
+set clipboard+=unnamed
+set sidescrolloff=6
+set scrolloff=6
+set ignorecase
+set incsearch
+set visualbell
+set noerrorbells
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+set ideajoin
+
+" Save with ctrl s (also in insert mode and then leave insert mode)
+map <C-S> <Action>(SaveAll)
+imap <C-S> <ESC><Action>(SaveAll)
+
+" avoid accidental movement
+map <S-Up> k
+map <S-Down> j
+
+map <leader>n :NERDTree<CR>
+
+map <leader>f <Action>(ReformatCode)
+map <leader>r <Action>(RenameElement)
+map <leader><space> <Action>(SearchEverywhere)
+nmap gi <Action>(GotoImplementation)
+nmap gu <Action>(FindUsages)
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
