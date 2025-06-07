@@ -5,7 +5,8 @@ sethandler <C-W> a:vim
 
 
 let mapleader = " "
-set clipboard+=unnamed
+
+set clipboard+=unnamedplus
 set sidescrolloff=6
 set scrolloff=6
 set ignorecase
@@ -47,3 +48,4 @@ nmap g<C-n> <Plug>NextOccurrence
 xmap g<C-n> <Plug>NextOccurrence
 xmap <C-x> <Plug>SkipOccurrence
 xmap <C-p> <Plug>RemoveOccurrence
+imap <C-V> <Action>(EditorPaste)

@@ -686,7 +686,6 @@ require('lazy').setup({
         },
         ruff = {},
         rust_analyzer = {},
-        jinja_lsp = {},
         html = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
