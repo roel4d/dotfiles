@@ -10,7 +10,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 alias lg='lazygit'
-alias vi='nvim'
+alias vi='vim'
 
 eval "$(ssh-agent)"
 eval "$(fzf --bash)"

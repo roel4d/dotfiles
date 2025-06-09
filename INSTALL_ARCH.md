@@ -139,6 +139,13 @@ sudo pacman -Suy gnome gnome-extra extra/xorg-xwayland seahorse
 sudo systemctl enable gdm.service
 ```
 
+## Printing
+```
+sudo pacman -S cups system-config-printer
+sudo systemctl enable --now cups.service
+sudo usermod -aG lp,sys $USER
+```
+
 ### Shortcuts (Settings -> Keyboard)
 - Launchers:
     - Launch help browser: disable
