@@ -72,8 +72,8 @@ nnoremap <S-tab> <c-w>W
 " open new splits right (vertical) or below (horizontal)
 set splitbelow
 set splitright
-map <F4> :vsplit<cr>
-map " :vsplit<cr>
+"map <F4> :vsplit<cr>
+"map " :vsplit<cr>
 
 " clear search highlight on enter
 nnoremap <CR> :noh<CR>
