@@ -671,21 +671,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        gopls = {},
-        pyright = {
-          settings = {
-            -- Using Ruff's import organizer
-            disableOrganizeImports = true,
-          },
-          python = {
-            analysis = {
-              -- Ignore all files for analysis to exclusively use Ruff for linting
-              ignore = { '*' },
-            },
-          },
-        },
-        ruff = {},
-        rust_analyzer = {},
+        -- gopls = {},
         html = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
