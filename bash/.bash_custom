@@ -1,0 +1,12 @@
+# Custom bash settings. Load like this in .bashrc:
+# if [ -f ~/.bash_custom ]; then
+#     . ~/.bash_custom
+# fi
+
+alias vi='nvim'
+alias lg='lazygit'
+alias fd='fdfind'
+eval "$(~/.local/bin/mise activate bash)"
+eval "$(fzf --bash)"
+eval "$(ssh-agent)"
+
