@@ -94,8 +94,9 @@ set timeoutlen=300
 nnoremap <leader><space> :FZF<CR>
 
 " NERDTree
-map <leader>n :NERDTreeToggle<CR>
+map <Bslash> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinPos = "right"
 
 " " abbreviations
 " iabbrev erb <%%><Left><Left>
