@@ -1,3 +1,8 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/night_owl.toml"
+]
+
 [env]
 TERM = "xterm-256color"
 
@@ -9,3 +14,4 @@ italic = { family = "FiraMono Nerd Font Mono", style = "Italic" }
 
 [window]
 option_as_alt = "Both"
+dimensions = { columns = 120, lines = 40 }

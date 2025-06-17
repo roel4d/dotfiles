@@ -29,7 +29,8 @@ set termguicolors
 set background=dark
 colorscheme sorbet
 
-" shared clipboards
+" shared clipboards 
+" (sudo apt install vim-gtk3)
 set clipboard^=unnamed,unnamedplus
 
 " don't wrap long lines
