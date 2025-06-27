@@ -1,0 +1,17 @@
+
+# This should be in .bashrc
+#if [ -d ~/.bashrc.d ]; then
+#    for rc in ~/.bashrc.d/*; do
+#        if [ -f "$rc" ]; then
+#            . "$rc"
+#        fi
+#    done
+#fi
+#unset rc
+
+
+alias vi='nvim'
+alias lg='lazygit'
+alias fd='fdfind'
+eval "$(fzf --bash)"
+eval "$(mise activate bash)"
