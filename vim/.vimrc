@@ -1,10 +1,13 @@
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-rails'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'  "TODO: https://github.com/tpope/vim-vinegar
 Plug 'dense-analysis/ale'
 call plug#end()
 
@@ -30,7 +33,8 @@ set background=dark
 colorscheme sorbet
 
 " shared clipboards 
-" (sudo apt install vim-gtk3)
+" Fedora: sudo dnf install vim-X11 wl-clipboard
+" Ubuntu: sudo apt install vim-gtk3
 set clipboard^=unnamed,unnamedplus
 
 " don't wrap long lines
@@ -46,14 +50,8 @@ imap <C-s> <ESC>:update<cr>
 " omnicomplate with ctrl+space (C-n is keyword completion)
 inoremap <C-Space> <C-x><C-o>
 
-" home/end like in readline
-map <C-a> <ESC>^
-imap <C-a> <ESC>I
-map <C-e> <ESC>$
-imap <C-e> <ESC>A
-
-" always show 5 lines above/below
-set scrolloff=5
+" always show lines above/below
+set scrolloff=4
 
 " autosave
 set autowrite
@@ -61,9 +59,9 @@ set autowrite
 " ignore case in search
 set ignorecase
 
-" tab is 4 spaces
-set tabstop=4
-set shiftwidth=4
+" tabs and  spaces
+set tabstop=2
+set shiftwidth=0
 set expandtab
 
 " change window also with tab
@@ -99,7 +97,7 @@ let NERDTreeQuitOnOpen = 1
 let g:NERDTreeWinPos = "right"
 
 " " abbreviations
-" iabbrev erb <%%><Left><Left>
+iabbrev erb <%%><Left><Left>
 " iabbrev ife if err != nil {return err}<CR>
 
 " " Baan
@@ -108,11 +106,15 @@ let g:NERDTreeWinPos = "right"
 
 " Linters
 set omnifunc=ale#completion#OmniFunc
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'python': ['ruff', 'ruff_format'],
 \   'php': ['php_cs_fixer'],
+\   'ruby': [''],
 \}
 nnoremap <silent> gd <Plug>(ale_go_to_definition)
 nnoremap <silent> gr <Plug>(ale_find_references)
