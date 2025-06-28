@@ -1,5 +1,4 @@
-vim.opt.background = "dark"
-vim.cmd.colorscheme("sorbet")
-
-vim.opt.clipboard = "unnamedplus"
+vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after')
+vim.o.packpath = vim.o.runtimepath
+vim.cmd('source ~/.vimrc')
 

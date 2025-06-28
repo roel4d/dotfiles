@@ -35,13 +35,11 @@ colorscheme sorbet
 " shared clipboards 
 " Fedora: sudo dnf install vim-X11 wl-clipboard
 " Ubuntu: sudo apt install vim-gtk3
+" Or use Neovim
 set clipboard^=unnamed,unnamedplus
 
 " don't wrap long lines
 set nowrap
-
-" make split less ugly
-set fillchars+=vert:│
 
 " Save with ctrl s (also in insert mode and then leave insert mode)
 map <C-s> :update<cr>
@@ -88,6 +86,11 @@ autocmd InsertLeave * set cul
 " timeout for leader key and command
 set timeoutlen=300
 
+if !has('nvim')
+  " make split less ugly
+  set fillchars+=vert:│
+endif
+
 " FZF
 nnoremap <leader><space> :FZF<CR>
 
@@ -108,7 +111,7 @@ iabbrev erb <%%><Left><Left>
 set omnifunc=ale#completion#OmniFunc
 let g:ale_fix_on_save = 0
 let g:ale_linters = {
-\   'ruby': ['rubocop'],
+\   'ruby': [''],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],

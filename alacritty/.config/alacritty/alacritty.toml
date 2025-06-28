@@ -10,3 +10,4 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 [window]
 option_as_alt = "Both"
 dimensions = { columns = 120, lines = 40 }
+decorations = "None"
