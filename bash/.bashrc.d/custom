@@ -12,6 +12,5 @@
 
 alias vi='vimx'
 alias lg='lazygit'
-alias fd='fdfind'
 eval "$(fzf --bash)"
 eval "$(mise activate bash)"

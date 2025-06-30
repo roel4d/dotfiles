@@ -87,7 +87,12 @@ if !has('nvim')
 endif
 
 " FZF
-nnoremap <leader><space> :FZF<CR>
+command! FZFLatest call fzf#run(fzf#wrap({
+  \ 'source': 'fd --type f --hidden --exclude .git --exec stat -c "%Y %n" | sort -nr | cut -d" " -f2-',
+  \ 'sink': 'e',
+  \ 'options': '--preview "bat --style=numbers --color=always {} || cat {}" --prompt "Last Changed> "'
+  \ }))
+nnoremap <leader><space> :FZFLatest<CR>
 
 " NERDTree
 map <Bslash> :NERDTreeToggle<CR>
