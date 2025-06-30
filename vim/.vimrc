@@ -4,22 +4,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rails'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'  "TODO: https://github.com/tpope/vim-vinegar
 Plug 'dense-analysis/ale'
 call plug#end()
-
-
-if has("gui_running")
-    set guifont=JetBrainsMonoNFM-Regular:h13
-
-    " set guifont=Fira_Code:h12:cANSI:qDRAFT
-    " set guioptions -=T
-    " set guioptions-=r  "scrollbar
-    " set lines=35 columns=100
-endif
 
 " space as leader key
 let mapleader=' '
@@ -66,6 +55,12 @@ set expandtab
 nnoremap <tab>   <c-w>w
 nnoremap <S-tab> <c-w>W
 
+" Page up/down
+noremap <C-j> <C-d>
+noremap <C-down> <C-d>
+noremap <C-k> <C-u>
+noremap <C-up> <C-u>
+
 " open new splits right (vertical) or below (horizontal)
 set splitbelow
 set splitright
@@ -102,10 +97,6 @@ let g:NERDTreeWinPos = "right"
 " " abbreviations
 iabbrev erb <%%><Left><Left>
 " iabbrev ife if err != nil {return err}<CR>
-
-" " Baan
-" au BufReadPost *.cln set syntax=baan
-" autocmd FileType baan setlocal commentstring=\|*\ %s
 
 " Linters
 set omnifunc=ale#completion#OmniFunc
