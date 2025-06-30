@@ -6,7 +6,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rails'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'  "TODO: https://github.com/tpope/vim-vinegar
+Plug 'preservim/nerdtree' 
 Plug 'dense-analysis/ale'
 call plug#end()
 

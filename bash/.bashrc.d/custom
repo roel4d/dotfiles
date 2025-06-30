@@ -10,7 +10,7 @@
 #unset rc
 
 
-alias vi='nvim'
+alias vi='vimx'
 alias lg='lazygit'
 alias fd='fdfind'
 eval "$(fzf --bash)"
