@@ -113,7 +113,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'python': ['ruff', 'ruff_format'],
 \   'php': ['php_cs_fixer'],
-\   'ruby': [''],
+\   'ruby': ['standardrb'],
 \}
 nnoremap <silent> gd <Plug>(ale_go_to_definition)
 nnoremap <silent> gr <Plug>(ale_find_references)
