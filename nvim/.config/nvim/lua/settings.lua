@@ -8,5 +8,9 @@ vim.g.mapleader= " "
 vim.keymap.set('n', '<C-s>', ':update<CR>', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:update<CR>', { noremap = true, silent = true })
 
+-- change window also with tab
+vim.keymap.set('', '<tab>', '<c-w>w', { noremap = true })
+vim.keymap.set('', '<S-tab>', '<c-w>W', { noremap = true })
+
 -- use system clipboard
 vim.opt.clipboard = "unnamedplus"

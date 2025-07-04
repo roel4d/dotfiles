@@ -6,7 +6,7 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    lazy = false, 
+    lazy = false,
     config = function()
       vim.keymap.set('n', '\\', ':Neotree reveal=true position=float toggle=true<CR>')
     end
