@@ -107,7 +107,7 @@ iabbrev erb <%%><Left><Left>
 set omnifunc=ale#completion#OmniFunc
 let g:ale_fix_on_save = 0
 let g:ale_linters = {
-\   'ruby': ['standardrb'],
+\   'ruby': [''],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
