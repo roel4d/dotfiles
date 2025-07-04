@@ -8,3 +8,5 @@ vim.g.mapleader= " "
 vim.keymap.set('n', '<C-s>', ':update<CR>', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:update<CR>', { noremap = true, silent = true })
 
+-- use system clipboard
+vim.opt.clipboard = "unnamedplus"
