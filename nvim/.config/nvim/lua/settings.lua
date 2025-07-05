@@ -26,5 +26,6 @@ vim.cmd [[
   augroup END
 ]]
 
--- show warnings
-vim.diagnostic.config({ virtual_text = true })
+-- show diagnostics on request
+vim.diagnostic.config({ virtual_text = false }) -- this is the default now
+vim.keymap.set('n', '<leader>ds', vim.diagnostic.open_float, { desc = 'Show diagnostics in float' })
