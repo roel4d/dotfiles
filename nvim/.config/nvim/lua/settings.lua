@@ -2,7 +2,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
-vim.g.mapleader= " "
+vim.g.mapleader = " "
 
 -- save with ctrl-s and go to normal mode if needed
 vim.keymap.set('n', '<C-s>', ':update<CR>', { noremap = true, silent = true })
@@ -19,9 +19,12 @@ vim.keymap.set('n', '"', ':vsplit<CR>', { noremap = true })
 vim.opt.clipboard = "unnamedplus"
 
 -- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd[[
+vim.cmd [[
   augroup highlight_yank
   autocmd!
   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
   augroup END
 ]]
+
+-- show warnings
+vim.diagnostic.config({ virtual_text = true })

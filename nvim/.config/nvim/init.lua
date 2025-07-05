@@ -17,4 +17,3 @@ require("settings")
 
 -- load the plugins
 require("lazy").setup("plugins")
-
